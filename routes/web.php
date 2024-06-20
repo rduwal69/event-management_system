@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/dashboard', [App\Http\Controllers\EventController::class, 'dashboard']);
 Route::get('event/create', [App\Http\Controllers\EventController::class, 'create']);
 Route::post('event/create', [App\Http\Controllers\EventController::class, 'submit']);
-Route::get('/show', [App\Http\Controllers\EventController::class, 'show']);
+Route::get('event/show', [App\Http\Controllers\EventController::class, 'show']);
 Route::get( 'event/{id}/edit', [App\Http\Controllers\EventController::class, 'edit']);
 Route::put('event/{id}/update', [App\Http\Controllers\EventController::class, 'update']);
 Route::get( 'event/{id}/delete', [App\Http\Controllers\EventController::class, 'delete']);

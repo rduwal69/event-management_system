@@ -39,10 +39,9 @@ class EventController extends Controller
             'venue' => $request->venue,
             'no_of_participants' => $request->no_of_participants,
             'description' => $request->description,
-
         ]);
 
-        return redirect('create')->with('success', 'Event Created');
+        return redirect('event/create')->with('success', 'Event Created');
     }
 
     public function show(Request $request)
@@ -89,7 +88,7 @@ class EventController extends Controller
 
         ]);
 
-        return redirect('/show')->with('editsuccess', 'Event Updated Successfully');
+        return redirect('event/show')->with('editsuccess', 'Event Updated Successfully');
     }
 
     public function delete(int $id)

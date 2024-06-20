@@ -27,8 +27,8 @@
                             Events
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{url('create')}}">Create Event</a></li>
-                            <li><a class="dropdown-item" href="{{url('show')}}">Show Event</a></li>
+                            <li><a class="dropdown-item" href="{{url('event/create')}}">Create Event</a></li>
+                            <li><a class="dropdown-item" href="{{url('event/show')}}">Show Event</a></li>
                         </ul>
                     </li>
                 </ul>

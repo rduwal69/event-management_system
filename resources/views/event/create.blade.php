@@ -26,7 +26,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-center">Add Event</h3>
                         <!-- Form starts here -->
-                        <form action="{{url('create')}}" method="POST">
+                        <form action="{{url('event/create')}}" method="POST">
                             @csrf
                             <div class="mb-3">
                                 <label for="event_title" class="form-label">Event</label>

@@ -27,8 +27,8 @@
                     <h1 class="head">Event Management System</h1>
                 </div>
                 <div class="button">
-                    <a class="btn btn-success mx-3" href="/create" role="button">Create Event</a>
-                    <a class="btn btn-success mx-3" href="/show" role="button">Show Event</a>
+                    <a class="btn btn-success mx-3" href="event/create" role="button">Create Event</a>
+                    <a class="btn btn-success mx-3" href="event/show" role="button">Show Event</a>
 
                 </div>
             </div>

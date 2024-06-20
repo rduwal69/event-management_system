@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('/image/city.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.division {
+    /* background-color: brown; */
+    /* Set a fallback background color */
+    /* background-color: #000; */
+    /* Black */
+
+    /* Set a background gradient */
+    /* background: linear-gradient(to bottom, #d8c9c9, #0c1d3b); */
+
+    /* Ensure text color contrasts with the background */
+    color: #fff;
+    /* White */
+
+    /* Ensure full viewport coverage */
+    height: 100vh;
+    margin: 0;
+    padding-top: 12rem;
+
+    /* Optional: Center text */
+
+    font-size: 24px;
+    line-height: 1.5;
+    /* padding-bottom: 8rem; */
+}
+
+.navbar {
+    font-size: medium;
+    /* font-family: "Montserrat", sans-serif; */
+    color: white;
+
+}
+
+.contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+}

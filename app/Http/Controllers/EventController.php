@@ -18,7 +18,7 @@ class EventController extends Controller
 
     public function create()
     {
-        return view('event/create');
+        return view('event.create');
     }
 
     public function submit(Request $request)

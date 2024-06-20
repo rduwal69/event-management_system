@@ -46,7 +46,7 @@
                                 <label for="end_date" class="form-label">End Date</label>
                                 <input type="date" value="{{$data->end_date}}" class="form-control" id="end_date"
                                     name="end_date" required>
-                                @error('')
+                                @error('end_date')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>

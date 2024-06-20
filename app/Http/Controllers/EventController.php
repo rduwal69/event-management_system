@@ -48,7 +48,7 @@ class EventController extends Controller
     {
         $search = $request['search'] ?? "";
         if ($search != "") {
-            $item = Events::where('event_title', 'LIKE', '%' . $search . '%')->paginate(10)->appends(['search' => $search]);
+            $item = Events::where('event_title', 'LIKE', '%' . $search . '%')->orWhere('venue', 'LIKE', '%' . $search . '%')->paginate(10)->appends(['search' => $search]);
         } else {
             $item = DB::table('events')->paginate(10); //get data from event table and store into item variable
             // $item = Events::all();

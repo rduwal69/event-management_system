@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Events;
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Collection;
@@ -11,14 +12,13 @@ use Illuminate\Database\Eloquent\Collection;
 
 class EventController extends Controller
 {
-    public function dashboard()
-    {
-        return view('event/dashboard');
-    }
-
     public function create()
     {
-        return view('event.create');
+        if (Auth::check()) {
+            return view('event.create');
+        }
+        return redirect()->route('login');
+
     }
 
     public function submit(Request $request)
@@ -28,7 +28,7 @@ class EventController extends Controller
             'start_date' => 'required|date',
             'end_date' => 'required|date|after_or_equal:start_date',
             'venue' => 'required|max:255',
-            'no_of_participants' => 'required|integer',
+            'no_of_participants' => ['required', 'integer', 'min:0'],
             'description' => 'required',
         ]);
 
@@ -46,16 +46,18 @@ class EventController extends Controller
 
     public function show(Request $request)
     {
-        $search = $request['search'] ?? "";
-        if ($search != "") {
-            $item = Events::where('event_title', 'LIKE', '%' . $search . '%')->orWhere('venue', 'LIKE', '%' . $search . '%')->paginate(10)->appends(['search' => $search]);
-        } else {
-            $item = DB::table('events')->paginate(10); //get data from event table and store into item variable
-            // $item = Events::all();
+        if (Auth::check()) {
+            $search = $request['search'] ?? "";
+            if ($search != "") {
+                $item = Events::where('event_title', 'LIKE', '%' . $search . '%')->orWhere('venue', 'LIKE', '%' . $search . '%')->paginate(10)->appends(['search' => $search]);
+            } else {
+                $item = DB::table('events')->paginate(10); //get data from event table and store into item variable
+                // $item = Events::all();
+            }
 
+            return view('event/show', compact('item', 'search')); // Passes the retrieved data ($item) to the Blade template under the variable name item. This data will be accessible in the Blade template to display events.
         }
-
-        return view('event/show',compact('item','search')); // Passes the retrieved data ($item) to the Blade template under the variable name item. This data will be accessible in the Blade template to display events.
+        return redirect()->route('login');
     }
 
     public function edit(int $id)
@@ -73,7 +75,7 @@ class EventController extends Controller
             'start_date' => 'required|date',
             'end_date' => 'required|date|after_or_equal:start_date',
             'venue' => 'required|max:255',
-            'no_of_participants' => 'required|integer',
+            'no_of_participants' => ['required', 'integer', 'min:0'],
             'description' => 'required',
         ]);
 

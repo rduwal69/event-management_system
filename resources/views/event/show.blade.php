@@ -23,10 +23,10 @@
         @if (session('editsuccess'))
             <div id="eventcreatemsg" class="alert alert-info col-md-4">{{session('editsuccess')}}</div>
         @endif
-        <form action="" method="GET" class="d-flex col-md-3 my-3">
+        <form action="" method="GET" class="d-flex col-md-4 my-3">
             @csrf
             <input class="form-control me-2" type="search" name="search" value="{{$search}}"
-                placeholder="Search Event Title" aria-label="Search">
+                placeholder="Search Event Title or Location" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
         <table class="table table-bordered">

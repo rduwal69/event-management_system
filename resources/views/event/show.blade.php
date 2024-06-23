@@ -7,7 +7,6 @@
     <title>Event List</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="{{url('CSS/style.css')}}"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -45,13 +44,13 @@
             <tbody>
                 @foreach ($item as $data)
                     <tr>
-                        <td>{{ $data->id}}</td> <!-- Displaying serial number -->
-                        <td>{{ $data->event_title }}</td> <!-- Displaying event title -->
-                        <td>{{ $data->start_date }}</td> <!-- Displaying start date -->
-                        <td>{{ $data->end_date }}</td> <!-- Displaying start date -->
-                        <td>{{ $data->venue }}</td> <!-- Displaying venue -->
-                        <td>{{ $data->no_of_participants }}</td> <!-- Displaying number of participants -->
-                        <td>{{ $data->description }}</td> <!-- Displaying description -->
+                        <td>{{ $data->id}}</td>
+                        <td>{{ $data->event_title }}</td>
+                        <td>{{ $data->start_date }}</td>
+                        <td>{{ $data->end_date }}</td>
+                        <td>{{ $data->venue }}</td>
+                        <td>{{ $data->no_of_participants }}</td>
+                        <td>{{ $data->description }}</td> 
                         <td>
                             <a href="{{url('event/' . $data->id . '/edit')}}" class="btn btn-outline-info">Edit</a>
 
@@ -76,12 +75,11 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
     <script>
-        //function to hide alert messege after 3sec .
         document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => {
                 const msgElement = document.getElementById('eventcreatemsg');
                 if (msgElement) {
-                    msgElement.style.display = 'none'; // Hide the element after timeout
+                    msgElement.style.display = 'none'; 
                 }
             }, 3000);
         });

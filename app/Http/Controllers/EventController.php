@@ -51,11 +51,10 @@ class EventController extends Controller
             if ($search != "") {
                 $item = Events::where('event_title', 'LIKE', '%' . $search . '%')->orWhere('venue', 'LIKE', '%' . $search . '%')->paginate(10)->appends(['search' => $search]);
             } else {
-                $item = DB::table('events')->paginate(10); //get data from event table and store into item variable
-                // $item = Events::all();
+                $item = DB::table('events')->paginate(10);
             }
 
-            return view('event/show', compact('item', 'search')); // Passes the retrieved data ($item) to the Blade template under the variable name item. This data will be accessible in the Blade template to display events.
+            return view('event/show', compact('item', 'search'));
         }
         return redirect()->route('login');
     }

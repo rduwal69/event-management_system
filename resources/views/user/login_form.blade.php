@@ -51,7 +51,6 @@
                                     <button type="submit" class="btn btn-primary">Login</button>
                                 </div>
                             </form>
-                            <!-- Form ends here -->
                         </div>
                     </div>
                 </div>
@@ -66,16 +65,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
-    <script>
-        // document.addEventListener('DOMContentLoaded', function () {
-        //     setTimeout(() => {
-        //         const errorMsg = document.getElementById('errorMsg');
-        //         if (errorMsg) {
-        //             errorMsg.style.display = 'none'; // Hide the element after timeout
-        //         }
-        //     }, 3000);
-        // });
-    </script>
 </body>
 
 </html>

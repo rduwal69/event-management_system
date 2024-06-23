@@ -28,7 +28,6 @@
                     <div class="card">
                         <div class="card-body">
                             <h3 class="card-title text-center">Register</h3>
-                            <!-- Form starts here -->
                             <form action="{{url('register')}}" method="POST">
                                 @csrf
                                 <div class="form-group">
@@ -88,7 +87,6 @@
                                     <button type="submit" class="btn btn-primary">Register</button>
                                 </div>
                             </form>
-                            <!-- Form ends here -->
                         </div>
                     </div>
                 </div>
@@ -104,12 +102,11 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
     <script>
-        //function to hide alert messege after 3sec .
         document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => {
                 const registerMsg = document.getElementById('registrationsuccessfulmsg');
                 if (registerMsg) {
-                    registerMsg.style.display = 'none'; // Hide the element after timeout
+                    registerMsg.style.display = 'none'; 
                 }
             }, 5000);
         });

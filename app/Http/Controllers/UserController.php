@@ -27,7 +27,6 @@ class UserController extends Controller
 
     public function login(Request $request): RedirectResponse
     {
-        // dd(1);
         $userData = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
